@@ -1,0 +1,46 @@
+{
+  "name": "foxtructure_php",
+  "version": "2.0.0",
+  "description": "This is tool for automatic building a structure of project, depending basically on npm, gulp and sass.",
+  "main": "index.js",
+  "scripts": {
+    "foxtructure": "npm run init:npm-install && npm run init:dirs && npm run init:files && cd app && php composer.phar install",
+    "init:npm-install": "npm install",
+    "init:dirs": "mkdirp app/css app/fonts app/images app/js/libs app/vendor dev/scss/partials dev/js",
+    "init:files": "curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/index.php -o app/index.php && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/php/mailer.php -o app/vendor/mailer.php && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/css/main.css -o app/css/main.css && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/scss/main.scss -o dev/scss/main.scss && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/scss/reset.scss -o dev/scss/partials/_reset.scss && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/scss/animate.scss -o dev/scss/partials/_animate.scss && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/scss/variables.scss -o dev/scss/partials/_variables.scss && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/scss/mixins.scss -o dev/scss/partials/_mixins.scss && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/scss/layout.scss -o dev/scss/partials/_layout.scss && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/js/main.js -o dev/js/main.js && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/js/rellax.min.js -o app/js/libs/rellax.min.js && curl https://raw.githubusercontent.com/foxtructure/foxtructure_php/master/gulpfile.js -o gulpfile.js && curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foxtructure/foxtructure_php.git"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "task",
+    "runner",
+    "automatic",
+    "build",
+    "project",
+    "structure"
+  ],
+  "author": "Adam Reszka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foxtructure/foxtructure_php/issues"
+  },
+  "homepage": "https://github.com/foxtructure/foxtructure_php#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "mkdirp": "^0.5.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
